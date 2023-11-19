@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h2>Currency Converter</h2>
+    <form id="conversionForm" onsubmit="performConversion(); return false;">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount"><br><br>
+
+        <label for="fromCurrency">From Currency:</label>
+        <input type="text" id="fromCurrency" name="fromCurrency"><br><br>
+
+        <label for="toCurrency">To Currency:</label>
+        <input type="text" id="toCurrency" name="toCurrency"><br><br>
+
+        <input type="submit" value="Convert">
+    </form>
+
+    <div id="resultDiv" style="display: none;">
+        <h2>Conversion Result</h2>
+        <p id="convertedAmount"></p>
+        <p id="conversionRate"></p>
+    </div>
+
+    <script>
+        function performConversion() {
+            // Implement JavaScript logic here to handle the form submission via AJAX
+            // Fetch data from the form fields and send an AJAX request to the servlet
+            // Receive the response and update the result section in the HTML
+
+            // Example:
+            // Dummy values for demonstration
+            var amount = document.getElementById("amount").value;
+            var fromCurrency = document.getElementById("fromCurrency").value;
+            var toCurrency = document.getElementById("toCurrency").value;
+
+            var convertedAmount = 150; // Replace with the actual converted amount from the response
+            var conversionRate = 1.5; // Replace with the actual conversion rate from the response
+
+            document.getElementById("convertedAmount").innerText = "Converted Amount: " + convertedAmount + " " + toCurrency;
+            document.getElementById("conversionRate").innerText = "Conversion Rate: 1 " + fromCurrency + " = " + conversionRate + " " + toCurrency;
+
+            document.getElementById("resultDiv").style.display = "block";
+        }
+    </script>
+</body>
+</html>
